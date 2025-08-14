@@ -1,0 +1,58 @@
+# Encryption Methods Overview
+
+This document explains different types of encryption, their use cases, and common algorithms.  
+It’s meant for learning purposes and as a quick reference.
+
+## 1. Symmetric Encryption
+Definition: The same key is used for encryption and decryption.  
+Strengths: Fast, efficient for large data, simple to implement.  
+Weaknesses: Key must be shared securely between parties.  
+Common Algorithms:
+- AES (Advanced Encryption Standard) — modern standard, used in TLS, disk encryption.
+- ChaCha20 — fast, secure, good for mobile devices.
+- 3DES — older, now mostly deprecated.
+
+## 2. Asymmetric Encryption
+Definition: Uses a key pair — a public key for encryption and a private key for decryption.  
+Strengths: No need to share private key, enables secure key exchange.  
+Weaknesses: Slower than symmetric encryption, not ideal for large data.  
+Common Algorithms:
+- RSA — widely used for secure key exchange, digital signatures.
+- Elliptic Curve Cryptography (ECC) — smaller keys, faster than RSA.
+- Diffie-Hellman (DH) — key exchange protocol, often paired with symmetric encryption.
+
+## 3. Hash Functions
+Definition: One-way functions that turn input data into a fixed-size digest.  
+Strengths: Irreversible, used for integrity checks and password storage.  
+Weaknesses: Vulnerable to collisions if algorithm is weak.  
+Common Algorithms:
+- SHA-256 / SHA-3 — secure hash standards.
+- BLAKE2 — fast, secure alternative to SHA.
+- MD5, SHA-1 — outdated, insecure.
+
+## 4. Key Derivation Functions (KDFs)
+Definition: Algorithms that derive cryptographic keys from passwords or passphrases.  
+Purpose: Add computational cost to slow down brute-force attacks.  
+Common Algorithms:
+- PBKDF2 — widely used, configurable iterations.
+- Argon2 — modern, memory-hard, winner of Password Hashing Competition.
+- scrypt — memory-hard, good for password storage.
+
+## 5. Authenticated Encryption
+Definition: Combines encryption with authentication to ensure data integrity and confidentiality.  
+Examples:
+- AES-GCM — AES in Galois/Counter Mode, includes authentication tag.
+- ChaCha20-Poly1305 — fast on mobile, secure.
+
+## 6. Digital Signatures
+Definition: Cryptographic proof that a message was created by the holder of a private key.  
+Use cases: Software signing, verifying documents, blockchain transactions.  
+Algorithms:
+- RSA-PSS
+- ECDSA
+- EdDSA (Ed25519)
+
+## References
+- NIST Cryptographic Standards: https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines
+- OWASP Cryptographic Storage Guidelines: https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html
+- IETF RFCs for Encryption: https://www.rfc-editor.org/
